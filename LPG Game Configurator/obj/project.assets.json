@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio\\LPG-Launcher\\LPG Launcher\\LPG Launcher.csproj",
-      "projectName": "LPG Launcher",
-      "projectPath": "D:\\Visual Studio\\LPG-Launcher\\LPG Launcher\\LPG Launcher.csproj",
+      "projectUniqueName": "D:\\Visual Studio\\LPG-Launcher\\LPG Game Configurator\\LPG Game Configurator.csproj",
+      "projectName": "LPG Game Configurator",
+      "projectPath": "D:\\Visual Studio\\LPG-Launcher\\LPG Game Configurator\\LPG Game Configurator.csproj",
       "packagesPath": "C:\\Users\\johnc\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio\\LPG-Launcher\\LPG Launcher\\obj\\",
+      "outputPath": "D:\\Visual Studio\\LPG-Launcher\\LPG Game Configurator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -67,7 +67,7 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           },
-          "Microsoft.WindowsDesktop.App.WPF": {
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
             "privateAssets": "none"
           }
         },
