@@ -52,7 +52,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;)" />
+    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)Installer\InstallerVersionControl.exe&quot; &quot;BuildTime&quot;&#xD;&#xA;)" />
   </Target>
 
   <PropertyGroup>
@@ -61,6 +61,14 @@
     <OverwriteReadOnlyOutputFiles>true</OverwriteReadOnlyOutputFiles>
     <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Installer\InstallerVersionControl.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Installer\InstallerVersionControl.exe" />
+  </ItemGroup>
   
   <ItemGroup>
     <None Include="VersionAutoIncrementer.tt">
