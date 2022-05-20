@@ -10,21 +10,12 @@ using System.Windows.Forms;
 
 namespace LPG_Game_Configurator
 {
-    public partial class MainWindow : Form
+    public partial class Form1 : Form
     {
-        public MainWindow()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
     }
 }
