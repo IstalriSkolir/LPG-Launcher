@@ -1,3 +1,7 @@
 #Ignore project build files
 Debug/
 Release/
+LPG Game Configurator/obj/Debug/
+LPG Launcher/obj/Debug/
+LPG Game Configurator/obj/Release/
+LPG Launcher/obj/Release/
