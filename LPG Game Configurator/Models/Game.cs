@@ -24,7 +24,7 @@ namespace LPG_Game_Configurator.Models
             get { return name; }
             set
             {
-                if(name != value)
+                if (name != value)
                 {
                     name = value;
                 }
@@ -36,7 +36,7 @@ namespace LPG_Game_Configurator.Models
             get { return tagLine; }
             set
             {
-                if(tagLine != value)
+                if (tagLine != value)
                 {
                     tagLine = value;
                 }
@@ -48,7 +48,7 @@ namespace LPG_Game_Configurator.Models
             get { return description; }
             set
             {
-                if(description != value)
+                if (description != value)
                 {
                     description = value;
                 }
@@ -60,7 +60,7 @@ namespace LPG_Game_Configurator.Models
             get { return release; }
             set
             {
-                if(release != value)
+                if (release != value)
                 {
                     release = value;
                 }
@@ -76,7 +76,7 @@ namespace LPG_Game_Configurator.Models
 
         }
 
-        public Game (string setName, string setTagLine, string setDescription, DateTime setRelease)
+        public Game(string setName, string setTagLine, string setDescription, DateTime setRelease)
         {
             name = setName;
             tagLine = setTagLine;

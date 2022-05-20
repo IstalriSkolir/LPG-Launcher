@@ -5,8 +5,6 @@ D:\Visual Studio\LPG-Launcher\LPG Game Configurator\bin\Debug\net5.0-windows\LPG
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\bin\Debug\net5.0-windows\LPG Game Configurator.dll
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\bin\Debug\net5.0-windows\ref\LPG Game Configurator.dll
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\bin\Debug\net5.0-windows\LPG Game Configurator.pdb
-D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.csprojAssemblyReference.cache
-D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.csproj.GenerateResource.cache
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.GeneratedMSBuildEditorConfig.editorconfig
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.AssemblyInfoInputs.cache
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.AssemblyInfo.cs
@@ -15,4 +13,3 @@ D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\ref\LPG Game Configurator.dll
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.pdb
 D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG Game Configurator.genruntimeconfig.cache
-D:\Visual Studio\LPG-Launcher\LPG Game Configurator\obj\Debug\net5.0-windows\LPG_Game_Configurator.MainWindow.resources
