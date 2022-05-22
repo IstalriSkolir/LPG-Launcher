@@ -40,6 +40,10 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GameData\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TransformOnBuild>true</TransformOnBuild>

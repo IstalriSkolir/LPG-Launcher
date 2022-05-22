@@ -42,36 +42,12 @@ using System.Linq;
 			}
 		}
 		
-		private static void removeInstallers(int removeCount, string appDir){
-			//string[] files = Directory.GetFiles(appDir, "*.exe")
-			//DirectoryInfo source = new DirectoryInfo(appDir);
-			//foreach(FileInfo fi in source.GetFiles())
-			//{
-			//	if(removeCount > 0)
-			//	{
-			//		Console.WriteLine("Deleting " + fi.Name + "...");
-			//		//fi.Delete();
-			//		removeCount--;
-			//	}
-			//}
-			
-			
-			//var files = new DirectoryInfo(appDir).EnumerateFiles()
-			//	.OrderByDecending(f => f.CreationTime)
-			//	.Skip(5)
-			//	.ToList();
-			//files.ForEach(f => {
-			//	Console.WriteLine("Deleting " + fi.Name + "...");
-			//});
-			
-			
+		private static void removeInstallers(int removeCount, string appDir){	
 			foreach (var fi in new DirectoryInfo(appDir).GetFiles().OrderByDescending(x => x.CreationTime).Skip(5))
 			{
 				Console.WriteLine("Deleting " + fi.Name + "...");
 				fi.Delete();
 			}
-			
-			
 			Console.WriteLine("Older Installers Deleted, 5 Installers Remain");
 		}
 	} 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LPG_Game_Configurator.Models
 {
-    class Game
+    public class Game
     {
         #region Fields
 
@@ -14,6 +14,7 @@ namespace LPG_Game_Configurator.Models
         private string tagLine;
         private string description;
         private DateTime release;
+        
 
         #endregion
 
