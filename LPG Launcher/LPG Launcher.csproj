@@ -53,7 +53,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)Installer\InstallerVersionControl.exe&quot; &quot;BuildTime&quot;&#xD;&#xA;)" />
+    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   if not exist &quot;$(ProjectDir)bin\Release\net5.0-windows\GameData\&quot; (&#xD;&#xA;      mkdir &quot;$(ProjectDir)bin\Release\net5.0-windows\GameData\&quot;&#xD;&#xA;   )&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)Installer\InstallerVersionControl.exe&quot; &quot;BuildTime&quot;&#xD;&#xA;) else (&#xD;&#xA;   if not exist &quot;$(ProjectDir)bin\Debug\net5.0-windows\GameData\&quot; (&#xD;&#xA;      mkdir &quot;$(ProjectDir)bin\Debug\net5.0-windows\GameData\&quot;&#xD;&#xA;   )&#xD;&#xA;)" />
   </Target>
 
   <PropertyGroup>
@@ -86,6 +86,10 @@
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="GameData\" />
   </ItemGroup>
 
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />
