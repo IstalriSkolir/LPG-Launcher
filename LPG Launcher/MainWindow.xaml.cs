@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LPG_Launcher.ViewModels;
 
 namespace LPG_Launcher
 {
@@ -23,6 +24,7 @@ namespace LPG_Launcher
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }
