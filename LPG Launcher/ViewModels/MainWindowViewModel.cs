@@ -8,7 +8,7 @@ using LPG_Launcher.Models;
 
 namespace LPG_Launcher.ViewModels
 {
-    class MainWindowViewModel : MainWindow
+    class MainWindowViewModel
     {
         #region Fields
 
@@ -25,13 +25,5 @@ namespace LPG_Launcher.ViewModels
 
         #endregion
 
-        #region Private Functions
-
-        public void onLoad(object sender, RoutedEventArgs e)
-        {
-            int test = 0;
-        }
-
-        #endregion
     }
 }

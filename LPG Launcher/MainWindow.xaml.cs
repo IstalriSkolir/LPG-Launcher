@@ -24,6 +24,7 @@ namespace LPG_Launcher
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }
