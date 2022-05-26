@@ -53,7 +53,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   if not exist &quot;$(ProjectDir)bin\Release\net5.0-windows\GameData\&quot; (&#xD;&#xA;      mkdir &quot;$(ProjectDir)bin\Release\net5.0-windows\GameData\&quot;&#xD;&#xA;   )&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)Installer\InstallerVersionControl.exe&quot; &quot;BuildTime&quot;&#xD;&#xA;) else (&#xD;&#xA;   if not exist &quot;$(ProjectDir)bin\Debug\net5.0-windows\GameData\&quot; (&#xD;&#xA;      mkdir &quot;$(ProjectDir)bin\Debug\net5.0-windows\GameData\&quot;&#xD;&#xA;   )&#xD;&#xA;)" />
+    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   if not exist &quot;$(ProjectDir)bin\Release\net5.0-windows\GameData\&quot; (&#xD;&#xA;      mkdir &quot;$(ProjectDir)bin\Release\net5.0-windows\GameData\&quot;&#xD;&#xA;   )&#xD;&#xA;   &quot;$(ProjectDir)Installer\BuildAssistant.exe&quot; &quot;MoveGameData&quot;&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)Installer\BuildAssistant.exe&quot; &quot;CheckInstallers&quot;&#xD;&#xA;) else (&#xD;&#xA;   if not exist &quot;$(ProjectDir)bin\Debug\net5.0-windows\GameData\&quot; (&#xD;&#xA;      mkdir &quot;$(ProjectDir)bin\Debug\net5.0-windows\GameData\&quot;&#xD;&#xA;   )&#xD;&#xA;)" />
   </Target>
 
   <PropertyGroup>
@@ -68,10 +68,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Installer\BuildAssistant.cs" />
     <Compile Remove="Installer\InstallerVersionControl.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
     <None Remove="Resources\LogoTemp.png" />
     <None Remove="Resources\LogoTemp.png" />
