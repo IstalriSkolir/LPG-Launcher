@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -28,17 +29,20 @@ namespace LPG_Launcher.Models
 
         #region Public Functions
 
-        public List<Game> GetGameData()
+        public ObservableCollection<Game> GetGameData()
         {
-            List<Game> games = new List<Game>();
+            ObservableCollection<Game> games = new ObservableCollection<Game>();
             try
             {
                 var gameDir = new DirectoryInfo(gameDataDir);
                 var newestGameData = (from file in gameDir.GetFiles() orderby file.CreationTime descending select file).First();
                 string path = gameDataDir + "\\" + newestGameData.Name;
-                XmlSerializer serializer = new XmlSerializer(games.GetType());
+                List<Game> tempGames = new List<Game>();
+                XmlSerializer serializer = new XmlSerializer(tempGames.GetType());
                 TextReader reader = new StreamReader(path);
-                games = (List<Game>)serializer.Deserialize(reader);
+                tempGames = (List<Game>)serializer.Deserialize(reader);
+                foreach (Game game in tempGames)
+                    games.Add(game);
                 reader.Close();
             }
             catch

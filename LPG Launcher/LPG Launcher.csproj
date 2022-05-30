@@ -75,8 +75,6 @@
   <ItemGroup>
     <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
-    <None Remove="Resources\LogoTemp.png" />
-    <None Remove="Resources\LogoTemp.png" />
   </ItemGroup>
   
   <ItemGroup>
