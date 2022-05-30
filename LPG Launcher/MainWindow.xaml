@@ -3,10 +3,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LPG_Launcher"
-        mc:Ignorable="d"        
-        Title="LowPoly Games Launcher" Height="450" Width="800">
+        xmlns:local="clr-namespace:LPG_Launcher" xmlns:systemviews="clr-namespace:LPG_Launcher.SystemViews"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="LowPoly Games Launcher" Height="800" Width="1200">
     <Grid>
-
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#292933" Offset="0.0" />
+                    <GradientStop Color="#272732" Offset="0.05" />
+                    <GradientStop Color="#242532" Offset="0.1" />
+                    <GradientStop Color="#222331" Offset="0.15" />
+                    <GradientStop Color="#202131" Offset="0.2" />
+                    <GradientStop Color="#1E1F30" Offset="0.25" />
+                    <GradientStop Color="#1B1D2F" Offset="0.3" />
+                    <GradientStop Color="#191B2F" Offset="0.35" />
+                    <GradientStop Color="#17192E" Offset="0.4" />
+                    <GradientStop Color="#14172E" Offset="0.45" />
+                    <GradientStop Color="#12152D" Offset="0.5" />
+                    <GradientStop Color="#14172E" Offset="0.55" />
+                    <GradientStop Color="#17192E" Offset="0.6" />
+                    <GradientStop Color="#191B2F" Offset="0.65" />
+                    <GradientStop Color="#1B1D2F" Offset="0.7" />
+                    <GradientStop Color="#1E1F30" Offset="0.75" />
+                    <GradientStop Color="#202131" Offset="0.8" />
+                    <GradientStop Color="#222331" Offset="0.85" />
+                    <GradientStop Color="#242532" Offset="0.9" />
+                    <GradientStop Color="#272732" Offset="0.95" />
+                    <GradientStop Color="#292933" Offset="1.0" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <systemviews:TitleBar Grid.Row="0" />
+        <systemviews:GamesList Grid.Row="1" />
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace LPG_Launcher.ViewModels
         #region Fields
 
         private GameStorage gameData;
+        public ObservableCollection<Game> test;
 
         #endregion
 
@@ -21,6 +23,7 @@ namespace LPG_Launcher.ViewModels
         public MainWindowViewModel()
         {
             gameData = new GameStorage();
+            test = gameData.Games;
         }
 
         #endregion
