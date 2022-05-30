@@ -11,10 +11,10 @@ namespace LPG_Launcher.Models
         #region Fields
 
         private string name;
-        private string tagLine;
         private string description;
+        private string controls;
+        private string exePath;
         private DateTime release;
-        
 
         #endregion
 
@@ -32,18 +32,6 @@ namespace LPG_Launcher.Models
             }
         }
 
-        public string TagLine
-        {
-            get { return tagLine; }
-            set
-            {
-                if (tagLine != value)
-                {
-                    tagLine = value;
-                }
-            }
-        }
-
         public string Description
         {
             get { return description; }
@@ -52,6 +40,30 @@ namespace LPG_Launcher.Models
                 if (description != value)
                 {
                     description = value;
+                }
+            }
+        }
+
+        public string Controls
+        {
+            get { return controls; }
+            set
+            {
+                if(controls != value)
+                {
+                    controls = value;
+                }
+            }
+        }
+
+        public string ExePath
+        {
+            get { return exePath; }
+            set
+            {
+                if(exePath != value)
+                {
+                    exePath = value;
                 }
             }
         }
@@ -77,10 +89,9 @@ namespace LPG_Launcher.Models
 
         }
 
-        public Game(string setName, string setTagLine, string setDescription, DateTime setRelease)
+        public Game(string setName, string setDescription, DateTime setRelease)
         {
             name = setName;
-            tagLine = setTagLine;
             description = setDescription;
             release = setRelease;
         }
