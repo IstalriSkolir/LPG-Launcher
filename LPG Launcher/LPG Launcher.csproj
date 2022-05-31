@@ -75,6 +75,8 @@
   <ItemGroup>
     <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
+    <None Remove="Resources\GameTemp.png" />
+    <None Remove="Resources\LogoTemp.png" />
   </ItemGroup>
   
   <ItemGroup>
@@ -90,6 +92,15 @@
 
   <ItemGroup>
     <Folder Include="GameData\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\GameTemp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\LogoTemp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />

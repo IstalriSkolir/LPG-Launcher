@@ -41,9 +41,9 @@ namespace LPG_Launcher.Models
                 XmlSerializer serializer = new XmlSerializer(tempGames.GetType());
                 TextReader reader = new StreamReader(path);
                 tempGames = (List<Game>)serializer.Deserialize(reader);
-                foreach (Game game in tempGames)
-                    games.Add(game);
                 reader.Close();
+                foreach (Game game in tempGames)
+                    games.Add(game);               
             }
             catch
             {
