@@ -6,32 +6,28 @@
              xmlns:local="clr-namespace:LPG_Launcher.SystemViews" xmlns:viewmodels="clr-namespace:LPG_Launcher.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <viewmodels: x:Key="GameList"/>
-    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="Bebas Neue Bold" Text="Library" />
-        <ListView Margin="0,25,0,-125" Grid.Row="1" ItemsSource="{StaticResource GameList}">
-            <ListView.ItemsPanel>
+        <TextBlock Grid.Row="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="Bebas Neue Bold" Text="Library" />
+        <ListBox Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding GameData.Games}">
+            <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel>
-                        
-                    </WrapPanel>
+                    <WrapPanel />
                 </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            
-            <!--<ListView.ItemTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <WrapPanel>
-                        <!--<local:Game />--
-                        <TextBlock Text="{Binding Path=Name}" />
-                    </WrapPanel>
+                    <Grid>
+                        <Button Command="{}" Width="100" Height="100">
+                            <Image Source="/Resources/GameTemp.png" />
+                        </Button>
+                        <TextBlock Text="{Binding Path=Name}" Margin="10,10,0,0"/>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
-        </ListView>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>
