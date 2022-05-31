@@ -49,12 +49,11 @@ namespace LPG_Game_Configurator.Models
             }
         }
 
-        public List<Game> LoadXMLFile(string fileName)
+        public List<Game> LoadXMLFile(string path)
         {
             List<Game> games = new List<Game>();
             try
             {
-                string path = gameDataDir + "\\" + fileName;
                 XmlSerializer serializer = new XmlSerializer(games.GetType());
                 TextReader reader = new StreamReader(path);
                 games = (List<Game>)serializer.Deserialize(reader);

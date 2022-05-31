@@ -15,22 +15,73 @@ namespace LPG_Game_Configurator
     {
         #region Fields
 
-        GamesStorage gameData = new GamesStorage();
+        private GamesStorage gameData;
 
         #endregion
         public Form1()
         {
             InitializeComponent();
+            gameData = new GamesStorage();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        #region Add/Remove Games
+
+        private void AddGameButton_Click(object sender, EventArgs e)
         {
-            List<Game> games = new List<Game>();
-            games.Add(new Game("Name 1", "Desc 1", DateTime.Now));
-            games.Add(new Game("Name 2", "Desc 2", DateTime.Now));
-            games.Add(new Game("Name 3", "Desc 3", DateTime.Now));
-            XMLIO test = new XMLIO();
-            test.SaveXMLFile(games);
+            gameData.AddNewGame();
+            updateGamesBoxList();
         }
+
+        private void RemoveGameButton_Click(object sender, EventArgs e)
+        {
+            if(GamesBox.SelectedItem != null)
+            {
+                if(MessageBox.Show("Are you show you want to delete the game '" + GamesBox.SelectedItem + "'?", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    gameData.RemoveGame(GamesBox.SelectedItem.ToString());
+                    updateGamesBoxList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Game Selected!", "Error Removing Game", MessageBoxButtons.OK);
+            }
+        }
+
+        private void updateGamesBoxList()
+        {
+            GamesBox.Items.Clear();
+            foreach (Game game in gameData.Games)
+                GamesBox.Items.Add(game.Name);
+        }
+
+        #endregion
+
+        #region Load/Save
+
+        private void LoadFileButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.InitialDirectory = Environment.CurrentDirectory;
+            fileDialog.Title = "Load GameData File";
+            fileDialog.DefaultExt = "xml";
+            fileDialog.Multiselect = false;
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                GamesBox.Items.Clear();
+                gameData.LoadFile(fileDialog.FileName);
+                foreach (Game game in gameData.Games)
+                    GamesBox.Items.Add(game.Name);
+            }
+        }
+
+        private void SaveFileButton_Click(object sender, EventArgs e)
+        {
+            gameData.SaveFile();
+            MessageBox.Show("File Saved", "Save Complete", MessageBoxButtons.OK);
+        }
+
+        #endregion
+
     }
 }
