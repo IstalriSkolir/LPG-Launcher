@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace LPG_Game_Configurator.Models
         private string controls;
         private string exePath;
         private DateTime release;
+        private Image image;
+        private byte[] imageData;
+        private string imageName;
+        private string url;
 
         #endregion
 
@@ -76,6 +81,54 @@ namespace LPG_Game_Configurator.Models
                 if (release != value)
                 {
                     release = value;
+                }
+            }
+        }
+
+        public Image Image
+        {
+            get { return image; }
+            set
+            {
+                if(image != value)
+                {
+                    image = value;
+                }
+            }
+        }
+
+        public byte[] ImageData
+        {
+            get { return imageData; }
+            set
+            {
+                if(imageData != value)
+                {
+                    imageData = value;
+                }
+            }
+        }
+
+        public string ImageName
+        {
+            get { return imageName; }
+            set
+            {
+                if(imageName != value)
+                {
+                    imageName = value;
+                }
+            }
+        }
+
+        public string URL
+        {
+            get { return url; }
+            set
+            {
+                if(url != value)
+                {
+                    url = value;
                 }
             }
         }

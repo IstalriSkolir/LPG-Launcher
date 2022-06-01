@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,14 @@ namespace LPG_Game_Configurator
         #region Fields
 
         private GamesStorage gameData;
+        private bool firstGameSelected;
 
         #endregion
         public Form1()
         {
             InitializeComponent();
             gameData = new GamesStorage();
+            firstGameSelected = false;
         }
 
         #region Add/Remove Games
@@ -83,5 +86,118 @@ namespace LPG_Game_Configurator
 
         #endregion
 
+        #region Change Game Data
+
+        private void GamesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(GamesBox.SelectedItem != null)
+            {
+                Game game = gameData.GetGame(GamesBox.SelectedItem.ToString());
+                if (game != null)
+                    updateGameInfoBoxes(game);
+                else
+                    MessageBox.Show("Error finding the selected game!", "Internal Error", MessageBoxButtons.OK);
+                updateGamesBoxList();
+                if(!firstGameSelected)
+                    EnableControls();
+            }
+        }
+
+        private void GameNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                bool check = gameData.UpdateSelectedGame("Name", GameNameTextBox.Text);
+                if (!check)
+                {
+                    GameLabel.Text = GameNameTextBox.Text;
+                }
+                else
+                {
+                    MessageBox.Show("A game with the name '" + GameNameTextBox.Text + "' already exists!", "Error Changing Game Name", MessageBoxButtons.OK);
+                    GameNameTextBox.Text = "";
+                }
+            }
+        }
+
+        private void GameDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            gameData.UpdateSelectedGame("Date", date: GameDatePicker.Value);
+        }
+
+        private void GameControlsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gameData.UpdateSelectedGame("Controls", GameControlsComboBox.Text);
+        }
+
+        private void GameURLTextBox_TextChanged(object sender, EventArgs e)
+        {
+            gameData.UpdateSelectedGame("URL", GameURLTextBox.Text);
+        }
+
+        private void GamePathButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.InitialDirectory = Environment.CurrentDirectory;
+            fileDialog.Title = "Select Game .exe";
+            fileDialog.DefaultExt = "exe";
+            fileDialog.Multiselect = false;
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                gameData.UpdateSelectedGame("Path", fileDialog.FileName);
+                GamePathTextBox.Text = fileDialog.FileName;
+            }
+        }
+
+        private void GameImageButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.InitialDirectory = Environment.CurrentDirectory;
+            fileDialog.Title = "Select Game Image";
+            fileDialog.Multiselect = false;
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string ext = Path.GetExtension(fileDialog.FileName).ToLower();
+                if(".jpg".Equals(ext) || ".png".Equals(ext))
+                {
+                    byte[] imageData = File.ReadAllBytes(fileDialog.FileName);
+                    gameData.UpdateSelectedGame("Image", fileDialog.SafeFileName, imageData: imageData);
+                    GameImageTextBox.Text = fileDialog.SafeFileName;
+                }
+            }
+        }
+
+        private void GameDescTextBox_TextChanged(object sender, EventArgs e)
+        {
+            gameData.UpdateSelectedGame("Desc", GameDescTextBox.Text);
+        }
+
+        private void updateGameInfoBoxes(Game game)
+        {
+            GameLabel.Text = game.Name;
+            GameNameTextBox.Text = game.Name;
+            GameDatePicker.Value = game.Release;
+            GameControlsComboBox.Text = game.Controls;
+            GamePathTextBox.Text = game.ExePath;
+            GameImageTextBox.Text = game.ImageName;
+            GameURLTextBox.Text = game.URL;
+            GameDescTextBox.Text = game.Description;
+        }
+
+        private void EnableControls()
+        {
+            firstGameSelected = true;
+            GameNameTextBox.Enabled = true;
+            GameDatePicker.Enabled = true;
+            GameControlsComboBox.Enabled = true;
+            GamePathTextBox.Enabled = true;
+            GamePathButton.Enabled = true;
+            GameImageTextBox.Enabled = true;
+            GameImageButton.Enabled = true;
+            GameURLTextBox.Enabled = true;
+            GameDescTextBox.Enabled = true;
+        }
+
+        #endregion
     }
 }
