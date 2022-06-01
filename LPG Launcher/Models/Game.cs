@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace LPG_Launcher.Models
 {
@@ -15,6 +16,10 @@ namespace LPG_Launcher.Models
         private string controls;
         private string exePath;
         private DateTime release;
+        private Image image;
+        private byte[] imageData;
+        private string imageName;
+        private string url;
 
         #endregion
 
@@ -49,7 +54,7 @@ namespace LPG_Launcher.Models
             get { return controls; }
             set
             {
-                if(controls != value)
+                if (controls != value)
                 {
                     controls = value;
                 }
@@ -61,7 +66,7 @@ namespace LPG_Launcher.Models
             get { return exePath; }
             set
             {
-                if(exePath != value)
+                if (exePath != value)
                 {
                     exePath = value;
                 }
@@ -76,6 +81,54 @@ namespace LPG_Launcher.Models
                 if (release != value)
                 {
                     release = value;
+                }
+            }
+        }
+
+        public Image Image
+        {
+            get { return image; }
+            set
+            {
+                if (image != value)
+                {
+                    image = value;
+                }
+            }
+        }
+
+        public byte[] ImageData
+        {
+            get { return imageData; }
+            set
+            {
+                if (imageData != value)
+                {
+                    imageData = value;
+                }
+            }
+        }
+
+        public string ImageName
+        {
+            get { return imageName; }
+            set
+            {
+                if (imageName != value)
+                {
+                    imageName = value;
+                }
+            }
+        }
+
+        public string URL
+        {
+            get { return url; }
+            set
+            {
+                if (url != value)
+                {
+                    url = value;
                 }
             }
         }
