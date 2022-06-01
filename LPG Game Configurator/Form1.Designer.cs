@@ -203,7 +203,7 @@ namespace LPG_Game_Configurator
             this.GamePathButton.Name = "GamePathButton";
             this.GamePathButton.Size = new System.Drawing.Size(100, 23);
             this.GamePathButton.TabIndex = 14;
-            this.GamePathButton.Text = "Select .exe";
+            this.GamePathButton.Text = "Select .zip";
             this.GamePathButton.UseVisualStyleBackColor = true;
             this.GamePathButton.Click += new System.EventHandler(this.GamePathButton_Click);
             // 

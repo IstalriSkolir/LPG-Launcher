@@ -139,13 +139,13 @@ namespace LPG_Game_Configurator
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.InitialDirectory = Environment.CurrentDirectory;
-            fileDialog.Title = "Select Game .exe";
-            fileDialog.DefaultExt = "exe";
+            fileDialog.Title = "Select Game .zip";
+            fileDialog.DefaultExt = "zip";
             fileDialog.Multiselect = false;
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                gameData.UpdateSelectedGame("Path", fileDialog.FileName);
-                GamePathTextBox.Text = fileDialog.FileName;
+                gameData.UpdateSelectedGame("Path",fileDialog.FileName ,fileDialog.SafeFileName);
+                GamePathTextBox.Text = fileDialog.SafeFileName;
             }
         }
 
@@ -178,7 +178,7 @@ namespace LPG_Game_Configurator
             GameNameTextBox.Text = game.Name;
             GameDatePicker.Value = game.Release;
             GameControlsComboBox.Text = game.Controls;
-            GamePathTextBox.Text = game.ExePath;
+            GamePathTextBox.Text = game.FileZip;
             GameImageTextBox.Text = game.ImageName;
             GameURLTextBox.Text = game.URL;
             GameDescTextBox.Text = game.Description;

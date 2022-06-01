@@ -95,7 +95,7 @@ namespace LPG_Game_Configurator.Models
             return null;
         }
 
-        public bool UpdateSelectedGame(string prop, string val = "", DateTime date = new DateTime(), byte[] imageData = null)
+        public bool UpdateSelectedGame(string prop, string val = "", string val2 = "", DateTime date = new DateTime(), byte[] imageData = null)
         {
             switch (prop)
             {
@@ -113,6 +113,7 @@ namespace LPG_Game_Configurator.Models
                     break;
                 case "Path":
                     games[selectedGame].ExePath = val;
+                    games[selectedGame].FileZip = val2;
                     break;
                 case "Image":
                     games[selectedGame].ImageData = imageData;
