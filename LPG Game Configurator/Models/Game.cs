@@ -15,6 +15,7 @@ namespace LPG_Game_Configurator.Models
         private string description;
         private string controls;
         private string exePath;
+        private string fileZip;
         private DateTime release;
         private Image image;
         private byte[] imageData;
@@ -69,6 +70,18 @@ namespace LPG_Game_Configurator.Models
                 if (exePath != value)
                 {
                     exePath = value;
+                }
+            }
+        }
+
+        public string FileZip
+        {
+            get { return fileZip; }
+            set
+            {
+                if(fileZip != value)
+                {
+                    fileZip = value;
                 }
             }
         }

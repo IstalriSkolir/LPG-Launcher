@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace LPG_Launcher.Models
 {
@@ -15,6 +15,7 @@ namespace LPG_Launcher.Models
         private string description;
         private string controls;
         private string exePath;
+        private string fileZip;
         private DateTime release;
         private Image image;
         private byte[] imageData;
@@ -69,6 +70,18 @@ namespace LPG_Launcher.Models
                 if (exePath != value)
                 {
                     exePath = value;
+                }
+            }
+        }
+
+        public string FileZip
+        {
+            get { return fileZip; }
+            set
+            {
+                if (fileZip != value)
+                {
+                    fileZip = value;
                 }
             }
         }

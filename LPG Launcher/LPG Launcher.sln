@@ -4,8 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPG Launcher", "LPG Launcher.csproj", "{374640F9-089E-4A52-9560-E711381CDB49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{90E2215F-D47E-402A-9C2D-59119118902A} = {90E2215F-D47E-402A-9C2D-59119118902A}
+		{301907D7-9C96-490E-ACB1-472D522B8CE7} = {301907D7-9C96-490E-ACB1-472D522B8CE7}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPG Game Configurator", "..\LPG Game Configurator\LPG Game Configurator.csproj", "{90E2215F-D47E-402A-9C2D-59119118902A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPG Game Configurator", "..\LPG Game Configurator\LPG Game Configurator.csproj", "{90E2215F-D47E-402A-9C2D-59119118902A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{301907D7-9C96-490E-ACB1-472D522B8CE7} = {301907D7-9C96-490E-ACB1-472D522B8CE7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build Assistant", "..\Build Assistant\Build Assistant.csproj", "{301907D7-9C96-490E-ACB1-472D522B8CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +40,14 @@ Global
 		{90E2215F-D47E-402A-9C2D-59119118902A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90E2215F-D47E-402A-9C2D-59119118902A}.Release|x64.ActiveCfg = Release|Any CPU
 		{90E2215F-D47E-402A-9C2D-59119118902A}.Release|x64.Build.0 = Release|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Debug|x64.Build.0 = Debug|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Release|x64.ActiveCfg = Release|Any CPU
+		{301907D7-9C96-490E-ACB1-472D522B8CE7}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
