@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace LPG_Game_Configurator.Models
         [XmlArrayItem("Game")]
         private List<Game> games;
         private XMLIO xmlParser;
+        private int selectedGame;
 
         #endregion
 
@@ -25,6 +27,18 @@ namespace LPG_Game_Configurator.Models
         public List<Game> Games
         {
             get { return games; }
+        }
+
+        public int SelectedGame
+        {
+            get { return selectedGame; }
+            set
+            {
+                if(selectedGame != value)
+                {
+                    selectedGame = value;
+                }
+            }
         }
 
         #endregion
@@ -66,9 +80,54 @@ namespace LPG_Game_Configurator.Models
                     break;
                 }
             }
-            //foreach (Game game in games)
-            //    if (name.Equals(game.Name))
-            //        games.Remove(game);
+        }
+
+        public Game GetGame(string name)
+        {
+            for(int i = 0; i < games.Count; i++)
+            {
+                if (name.Equals(games[i].Name))
+                {
+                    selectedGame = i;
+                    return games[i];
+                }
+            }
+            return null;
+        }
+
+        public bool UpdateSelectedGame(string prop, string val = "", DateTime date = new DateTime(), byte[] imageData = null)
+        {
+            switch (prop)
+            {
+                case "Name":
+                    foreach (Game game in games)
+                        if (val.Equals(game.Name))
+                            return true;
+                    games[selectedGame].Name = val;
+                    return false;
+                case "Date":
+                    games[selectedGame].Release = date;
+                    break;
+                case "Controls":
+                    games[selectedGame].Controls = val;
+                    break;
+                case "Path":
+                    games[selectedGame].ExePath = val;
+                    break;
+                case "Image":
+                    games[selectedGame].ImageData = imageData;
+                    games[selectedGame].ImageName = val;
+                    break;
+                case "URL":
+                    games[selectedGame].URL = val;
+                    break;
+                case "Desc":
+                    games[selectedGame].Description = val;
+                    break;
+                default:
+                    break;
+            }
+            return false;
         }
 
         #endregion
