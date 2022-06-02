@@ -13,13 +13,13 @@ namespace LPG_Launcher.Models
     {
         #region Fields
 
-        private ObservableCollection<Game> games;
+        private ObservableCollection<GameLogic> games;
 
         #endregion
 
         #region Get/Sets
 
-        public ObservableCollection<Game> Games
+        public ObservableCollection<GameLogic> Games
         {
             get { return games; }
             set

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Windows.Input;
 
 namespace LPG_Launcher.Models
 {
-    public class GameLogic
+    public class GameLogic : Game
     {
         #region Fields
 
@@ -25,12 +26,26 @@ namespace LPG_Launcher.Models
 
         #endregion
 
+        public GameLogic(Game game)
+        {
+            Name = game.Name;
+            Description = game.Description;
+            Controls = game.Controls;
+            ExePath = game.ExePath;
+            Release = game.Release;
+            ImageData = game.ImageData;
+            URL = game.URL;
+        }
+
         #region Private Functionality
 
         private void runGame()
         {
-            //string test = exePath;
-
+            ProcessStartInfo game = new ProcessStartInfo(ExePath);
+            using (Process process = Process.Start(game))
+            {
+                process.WaitForExit();
+            }
         }
 
         #endregion region
