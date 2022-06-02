@@ -21,8 +21,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Button Command="{}" Width="100" Height="100">
-                            <Image Source="/Resources/GameTemp.png" />
+                        <Button Command="{Binding RunGameCommand}" Width="100" Height="100">
+                            <Image Source="{Binding Path=ImageData}" />
                         </Button>
                         <TextBlock Text="{Binding Path=Name}" Margin="10,10,0,0"/>
                     </Grid>

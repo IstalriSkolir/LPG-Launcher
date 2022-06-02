@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LPG_Launcher.Models
 {
-    public class Game
+    public class Game : GameLogic
     {
         #region Fields
 

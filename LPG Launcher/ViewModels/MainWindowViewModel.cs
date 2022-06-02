@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using LPG_Launcher.Models;
 
 namespace LPG_Launcher.ViewModels
@@ -35,6 +36,5 @@ namespace LPG_Launcher.ViewModels
         }
 
         #endregion
-
     }
 }
