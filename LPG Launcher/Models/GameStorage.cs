@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +13,13 @@ namespace LPG_Launcher.Models
     {
         #region Fields
 
-        private ObservableCollection<Game> games;
+        private ObservableCollection<GameLogic> games;
 
         #endregion
 
         #region Get/Sets
 
-        public ObservableCollection<Game> Games
+        public ObservableCollection<GameLogic> Games
         {
             get { return games; }
             set
@@ -36,8 +38,22 @@ namespace LPG_Launcher.Models
         public GameStorage()
         {
             games = new XMLReader().GetGameData();
+            initialiseGameData();
         }
 
         #endregion
+
+        #region Private Functions
+
+        private void initialiseGameData()
+        {
+            foreach(Game game in games)
+            {
+                game.ExePath = Directory.GetCurrentDirectory() + "\\Games\\" + game.ExePath;
+            }
+        }
+
+        #endregion
+
     }
 }

@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="Bebas Neue Bold" Text="Library" />
-        <ListBox Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding GameData.Games}">
+        <ListBox Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding GameData.Games}" Margin="10, 10, 10, 10">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel />
@@ -21,10 +21,16 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Button Command="{}" Width="100" Height="100">
-                            <Image Source="/Resources/GameTemp.png" />
+                        <Button Command="{Binding RunGameCommand}" Width="200" Height="200">
+                            <!--<Image Source="{Binding Path=ImageData}" />-->
+                            <Button.Background>
+                                <ImageBrush ImageSource="{Binding Path=ImageData}" Stretch="UniformToFill" />
+                            </Button.Background>
+                            <Button.Content>
+                                <TextBlock Text="{Binding Name}"/>
+                            </Button.Content>
                         </Button>
-                        <TextBlock Text="{Binding Path=Name}" Margin="10,10,0,0"/>
+                       <!-- <TextBlock Text="{Binding Path=Name}" Margin="10,10,0,0"/>-->
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

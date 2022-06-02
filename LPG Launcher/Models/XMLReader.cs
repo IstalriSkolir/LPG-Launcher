@@ -29,9 +29,9 @@ namespace LPG_Launcher.Models
 
         #region Public Functions
 
-        public ObservableCollection<Game> GetGameData()
+        public ObservableCollection<GameLogic> GetGameData()
         {
-            ObservableCollection<Game> games = new ObservableCollection<Game>();
+            ObservableCollection<GameLogic> games = new ObservableCollection<GameLogic>();
             try
             {
                 var gameDir = new DirectoryInfo(gameDataDir);
@@ -43,7 +43,7 @@ namespace LPG_Launcher.Models
                 tempGames = (List<Game>)serializer.Deserialize(reader);
                 reader.Close();
                 foreach (Game game in tempGames)
-                    games.Add(game);               
+                    games.Add(new GameLogic(game)); ;               
             }
             catch
             {
