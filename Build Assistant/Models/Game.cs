@@ -17,7 +17,6 @@ namespace Build_Assistant.Models
         private string exePath;
         private string fileZip;
         private DateTime release;
-        private Image image;
         private byte[] imageData;
         private string imageName;
         private string url;
@@ -94,18 +93,6 @@ namespace Build_Assistant.Models
                 if (release != value)
                 {
                     release = value;
-                }
-            }
-        }
-
-        public Image Image
-        {
-            get { return image; }
-            set
-            {
-                if(image != value)
-                {
-                    image = value;
                 }
             }
         }
