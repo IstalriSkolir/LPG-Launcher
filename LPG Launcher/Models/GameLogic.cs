@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using LPG_Launcher.ViewModels;
 
 namespace LPG_Launcher.Models
 {
@@ -13,7 +14,9 @@ namespace LPG_Launcher.Models
     {
         #region Fields
 
+        private MainWindowViewModel mainWindow;
         private ICommand runGameCommand;
+        private bool buttonEnabled;
 
         #endregion
 
@@ -21,12 +24,24 @@ namespace LPG_Launcher.Models
 
         public ICommand RunGameCommand
         {
-            get { return runGameCommand ?? (runGameCommand = new CommandHandler(() => runGame(), () => true)); }
+            get { return runGameCommand ?? (runGameCommand = new CommandHandler(() => runGame(), () => buttonEnabled)); }
+        }
+
+        public bool ButtonEnabled
+        {
+            get { return buttonEnabled; }
+            set
+            {
+                if(buttonEnabled != value)
+                {
+                    buttonEnabled = value;
+                }
+            }
         }
 
         #endregion
 
-        public GameLogic(Game game)
+        public GameLogic(Game game, MainWindowViewModel window)
         {
             Name = game.Name;
             Description = game.Description;
@@ -35,17 +50,25 @@ namespace LPG_Launcher.Models
             Release = game.Release;
             ImageData = game.ImageData;
             URL = game.URL;
+            mainWindow = window;
+            buttonEnabled = true;
         }
 
         #region Private Functionality
 
         private void runGame()
         {
-            ProcessStartInfo game = new ProcessStartInfo(ExePath);
-            using (Process process = Process.Start(game))
-            {
-                process.WaitForExit();
-            }
+            mainWindow.GameData.ChangeGameButtonEnabled(false);
+            var process = new Process();
+            process.StartInfo.FileName = ExePath;
+            process.EnableRaisingEvents = true;
+            process.Exited += new EventHandler(gameExited);
+            process.Start();
+        }
+
+        private void gameExited(object sender, EventArgs e)
+        {
+            mainWindow.GameData.ChangeGameButtonEnabled(true);
         }
 
         #endregion region

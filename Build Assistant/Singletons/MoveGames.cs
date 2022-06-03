@@ -107,8 +107,16 @@ namespace Build_Assistant.Singletons
                 {
                     Console.WriteLine("Build Assistant: Extracting " + game.FileZip + "...");
                     ZipFile.ExtractToDirectory(game.ExePath, Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip);
-                    Directory.Move(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip + "\\" + game.FileZip.Substring(0, game.FileZip.Length - 4) + "\\", Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip.Substring(0, game.FileZip.Length - 4) + "\\");
-                    Directory.Delete(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip);
+                    string[] files = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip + "\\", "*.exe");
+                    if(files.Length == 0)
+                    {
+                        Directory.Move(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip + "\\" + game.FileZip.Substring(0, game.FileZip.Length - 4) + "\\", Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip.Substring(0, game.FileZip.Length - 4) + "\\");
+                        Directory.Delete(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip);
+                    }
+                    else
+                    {
+                        Directory.Move(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip + "\\", Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + game.FileZip.Substring(0, game.FileZip.Length - 4) + "\\");
+                    }
                 }
             }
             catch (Exception e)

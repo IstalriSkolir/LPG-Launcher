@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LPG_Launcher.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -29,7 +30,7 @@ namespace LPG_Launcher.Models
 
         #region Public Functions
 
-        public ObservableCollection<GameLogic> GetGameData()
+        public ObservableCollection<GameLogic> GetGameData(MainWindowViewModel mainWindow)
         {
             ObservableCollection<GameLogic> games = new ObservableCollection<GameLogic>();
             try
@@ -43,7 +44,7 @@ namespace LPG_Launcher.Models
                 tempGames = (List<Game>)serializer.Deserialize(reader);
                 reader.Close();
                 foreach (Game game in tempGames)
-                    games.Add(new GameLogic(game)); ;               
+                    games.Add(new GameLogic(game, mainWindow)); ;               
             }
             catch
             {

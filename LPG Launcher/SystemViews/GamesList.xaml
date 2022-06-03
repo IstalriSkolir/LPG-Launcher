@@ -21,7 +21,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Button Command="{Binding RunGameCommand}" Width="200" Height="200">
+                        <Button Command="{Binding RunGameCommand}" IsEnabled="{Binding ButtonEnabled}" Width="200" Height="200">
                             <!--<Image Source="{Binding Path=ImageData}" />-->
                             <Button.Background>
                                 <ImageBrush ImageSource="{Binding Path=ImageData}" Stretch="UniformToFill" />
