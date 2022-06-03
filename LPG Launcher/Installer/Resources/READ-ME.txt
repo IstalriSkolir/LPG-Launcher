@@ -1,0 +1,115 @@
+CONTENTS
+--------
+
+* Introduction
+* Requirements
+* Configuration
+* Support
+* Authors
+* FAQ
+
+
+INTRODUCTION
+------------
+
+This software is a games launcher for all the games that the LowPoly Games team
+have made in game jams since our first game jam, Global Game Jam 2017. Since
+then we have taken part in every Global Game Jam as well as many others at the
+University of Lincoln.
+
+All the games that are bundled into this launcher are avaliable on Itch.io at:
+https://lowpolygames.itch.io/
+
+
+REQUIREMENTS
+------------
+
+This software and all the games included are built for Windows machines only
+and so Mac and Linux are not officially supported. The launcher requires
+.NET 5.0 runtime which is installed as part of the installation process.
+
+Most the games are mouse and keyboard but some of the games require a Xbox
+controller in order to play. Check the games controller label on the tooltip
+to determine if the current game requires a controller. Most the games are
+small and should run on fairly low end systems, however, they are game jam
+games. All of the games in this launcher were made in 24/48 hours and as such
+are not optimised so your performance may vary from game to game and system to
+system.
+
+
+CONFIGURATION
+-------------
+
+Currently, the launcher itself has no configuration settings for the user to
+change. When the games launch, they will each have their own configuration
+window appear for the user to change graphics and other similar settings. In
+time, this will hopefully be integrated into the launcher itself but this is
+dependant on the progress of the launcher and how long we continue to support
+it's development beyond adding games from new Game Jams.
+
+
+SUPPORT
+-------
+
+If you encounter any bugs or issues with the launcher, then please report an
+issue at https://github.com/JohnWolfson/LPG-Launcher/issues. Alternatively,
+you can email us at lowpolygames@protonmail.com. Before reporting a bug,
+please consider the fact that the games in this launcher are Game Jam games
+and so will have bugs in them by nature. However, any bugs in the launcher
+we will address and all the games should be playable. If not, please reinstall
+the launcher and if you are still having issues then please raise an issue with
+us.
+
+Please note that the launcher is still under development and while there are
+plans to integrate further features into the launcher, this is purely a for
+passion project and the development made cease at some time as a result.
+
+
+AUTHORS
+-------
+
+The authors of all the games present are the members of the LowPoly Games team
+which includes:
+
+* Will Dixon
+* Daniel Dennis
+* John Wolfson
+
+Some of the games also had Luke Garside and Tim Weightman on the team as well.
+The launcher was mainly developed by John Wolfson with some design help from
+Will Dixon.
+
+
+FAQ
+---
+
+Q: What is a Game Jam?
+
+A: A Game Jam is a event where a team of people or person design and develop a
+   game from scratch within a short space of time. Usually Game Jams have a
+   theme that the team may or may not use. All the games in this launcher were
+   made in either 24 or 48 hours.
+
+
+Q: I found a bug in one of the games, should I raise a issue?
+
+A: As mentioned, this games are jam games made in a short space of time. As a
+   result of that, there are some bugs in them. As a general rule, we try to
+   leave our jam games in the same state as they were at the end of the jam.
+
+
+Q: So all the games are the same as they were at the end of the jam they were
+   made in?
+
+A: Mostly, some like Home Is Where The Mech is had some slight work done after
+   to ensure that anyone could play the game. Time To Kill is another we had to
+   make some slight changes to for it to be fully playable. However, we haven't
+   made any changes to any of the games and most of them are untouched from the
+   end of the jam they were developed in.
+
+
+Q: The GitHub repository for this is public, can I make contributions?
+
+A: Only the LowPoly Team can make code contributions to the project anyone can
+   report issues for us to work on. Please feel free to raise issues or add
+   suggestions to the launcher for us to consider working on.

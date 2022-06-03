@@ -53,7 +53,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="&quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MakeDir$(ConfigurationName)&quot;&#xD;&#xA;if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MoveGameData&quot;&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MoveGames&quot;&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CheckInstallers&quot;&#xD;&#xA;)" />
+    <Exec Command="&quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MakeDir$(ConfigurationName)&quot;&#xD;&#xA;if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MoveGames&quot;&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CheckInstallers&quot;&#xD;&#xA;)" />
   </Target>
 
   <PropertyGroup>
