@@ -25,6 +25,7 @@ OutputDir=..\Output
 [Files]
 Source: "..\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs;
 Source: "Resources\windowsdesktop-runtime-5.0.17-win-x64.exe"; DestDir: "{app}"; Flags: ignoreversion deleteafterinstall
+Source: "Resources\READ-ME.txt"; DestDir: "{app}"; Flags: isreadme;
 Source: "Resources\LogoTemp.ico"; DestDir: "{app}\Resources";
 
 [Icons]

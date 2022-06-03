@@ -52,6 +52,9 @@
     <Compile Include="Models\Game.cs" />
     <Compile Include="BuildAssistant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singletons\CheckInstallers.cs" />
+    <Compile Include="Singletons\MakeDirectories.cs" />
+    <Compile Include="Singletons\MoveGames.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
