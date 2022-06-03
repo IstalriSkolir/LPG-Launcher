@@ -11,7 +11,7 @@ using LPG_Launcher.Models;
 
 namespace LPG_Launcher.ViewModels
 {
-    class MainWindowViewModel
+    public class MainWindowViewModel
     {
         #region Fields
 
@@ -32,7 +32,7 @@ namespace LPG_Launcher.ViewModels
 
         public MainWindowViewModel()
         {
-            gameData = new GameStorage();
+            gameData = new GameStorage(this);
         }
 
         #endregion

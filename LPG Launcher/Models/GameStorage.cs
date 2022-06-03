@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LPG_Launcher.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LPG_Launcher.Models
 {
-    class GameStorage
+    public class GameStorage
     {
         #region Fields
 
@@ -35,10 +36,20 @@ namespace LPG_Launcher.Models
 
         #region Constructor/Destructor
 
-        public GameStorage()
+        public GameStorage(MainWindowViewModel mainWindow)
         {
-            games = new XMLReader().GetGameData();
+            games = new XMLReader().GetGameData(mainWindow);
             initialiseGameData();
+        }
+
+        #endregion
+
+        #region Public functions
+
+        public void ChangeGameButtonEnabled(bool enabled)
+        {
+            foreach (GameLogic game in games)
+                game.ButtonEnabled = enabled;
         }
 
         #endregion

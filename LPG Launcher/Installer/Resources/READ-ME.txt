@@ -104,8 +104,8 @@ Q: So all the games are the same as they were at the end of the jam they were
 A: Mostly, some like Home Is Where The Mech is had some slight work done after
    to ensure that anyone could play the game. Time To Kill is another we had to
    make some slight changes to for it to be fully playable. However, we haven't
-   made any changes to any of the games and most of them are untouched from the
-   end of the jam they were developed in.
+   made many changes to any of the games and most of them are untouched from
+   the end of the jam they were developed in.
 
 
 Q: The GitHub repository for this is public, can I make contributions?
