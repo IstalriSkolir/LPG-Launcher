@@ -61,6 +61,8 @@ namespace LPG_Launcher.Models
             foreach(Game game in games)
             {
                 game.ExePath = Directory.GetCurrentDirectory() + "\\Games\\" + game.ExePath;
+                game.Controls = "Controls: " + game.Controls;
+                game.URL = "URL: " + game.URL;
             }
         }
 

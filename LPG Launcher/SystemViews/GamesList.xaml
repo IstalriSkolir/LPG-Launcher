@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="Bebas Neue Bold" Text="Library" />
-        <ListBox Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding GameData.Games}" Margin="10, 10, 10, 10">
+        <ListBox Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" BorderThickness="0" ItemsSource="{Binding GameData.Games}" Margin="10, 10, 10, 10">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel />
@@ -22,15 +22,47 @@
                 <DataTemplate>
                     <Grid>
                         <Button Command="{Binding RunGameCommand}" IsEnabled="{Binding ButtonEnabled}" Width="200" Height="200">
-                            <!--<Image Source="{Binding Path=ImageData}" />-->
                             <Button.Background>
                                 <ImageBrush ImageSource="{Binding Path=ImageData}" Stretch="UniformToFill" />
                             </Button.Background>
                             <Button.Content>
                                 <TextBlock Text="{Binding Name}"/>
                             </Button.Content>
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <ToolTip.Background>
+                                        <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStop Color="#292933" Offset="0.0" />
+                                                <GradientStop Color="#1E1F30" Offset="0.25" />
+                                                <GradientStop Color="#12152D" Offset="0.5" />
+                                                <GradientStop Color="#1E1F30" Offset="0.75" />
+                                                <GradientStop Color="#292933" Offset="1.0" />
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </ToolTip.Background>
+                                    <DockPanel> <!--Width="150" Height="100">-->
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="200" />
+                                                <ColumnDefinition Width="150" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" FontSize="16" FontFamily="Bebas Neue Bold" Text="{Binding Controls}" Foreground="White"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="0" FontSize="16" FontFamily="Bebas Neue Bold" Text="{Binding ReleaseDate}" Foreground="White" />
+                                            <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="16" FontFamily="Bebas Neue Bold" Text="{Binding URL}" Foreground="White" Margin="0, 5, 0, 0" />
+                                            <TextBlock Grid.Column="0" Grid.Row="2" FontSize="16" FontFamily="Bebas Neue Bold" Text="Description:" Foreground="White" Margin="0, 10, 0, 0"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" FontSize="16" FontFamily="Bebas Neue Bold" Text="{Binding Description}" Foreground="White" TextWrapping="Wrap" />
+                                        </Grid>
+                                    </DockPanel>
+                                </ToolTip>
+                            </Button.ToolTip>
                         </Button>
-                       <!-- <TextBlock Text="{Binding Path=Name}" Margin="10,10,0,0"/>-->
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

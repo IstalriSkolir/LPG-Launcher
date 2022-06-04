@@ -39,6 +39,11 @@ namespace LPG_Launcher.Models
             }
         }
 
+        public string ReleaseDate
+        {
+            get { return  "Release Date: " + Release.ToShortDateString(); }
+        }
+
         #endregion
 
         public GameLogic(Game game, MainWindowViewModel window)

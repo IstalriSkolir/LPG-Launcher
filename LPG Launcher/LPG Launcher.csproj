@@ -115,7 +115,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="&quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CleanDir$(ConfigurationName)&quot;" />
+    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CleanDir$(ConfigurationName)&quot;&#xD;&#xA;)" />
   </Target>
 
 </Project>
