@@ -104,10 +104,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\GameTemp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -117,5 +113,9 @@
   </ItemGroup>
 
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CleanDir$(ConfigurationName)&quot;" />
+  </Target>
 
 </Project>

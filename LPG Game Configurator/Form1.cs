@@ -65,7 +65,7 @@ namespace LPG_Game_Configurator
         private void LoadFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.InitialDirectory = Environment.CurrentDirectory;
+            fileDialog.InitialDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString()).ToString() + "\\GameData";
             fileDialog.Title = "Load GameData File";
             fileDialog.DefaultExt = "xml";
             fileDialog.Multiselect = false;

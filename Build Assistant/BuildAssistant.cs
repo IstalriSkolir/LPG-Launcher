@@ -14,7 +14,7 @@ namespace Build_Assistant
         public static void Main(string[] args)
         {
             Console.WriteLine("\nBuild Assistant: Loading...");
-            List<string> commands = new List<string> { "CheckInstallers", "MakeDirDebug", "MakeDirRelease", "MoveGames" };
+            List<string> commands = new List<string> { "CleanDirDebug", "CleanDirRelease", "MakeDirDebug", "MakeDirRelease", "MoveGames", "CheckInstallers" };
             if (args == null || args.Length == 0)
             {
                 Console.WriteLine("No arguements given, Build Assistant needs to be given one of the following arguements:");
@@ -25,8 +25,11 @@ namespace Build_Assistant
             }
             switch (args[0])
             {
-                case "CheckInstallers":
-                    CheckInstallers.Instance.Run();
+                case "CleanDirDebug":
+                    CleanDirectories.Instance.Run("Debug");
+                    break;
+                case "CleanDirRelease":
+                    CleanDirectories.Instance.Run("Release");
                     break;
                 case "MakeDirDebug":
                     MakeDirectories.Instance.Run("Debug");
@@ -36,6 +39,9 @@ namespace Build_Assistant
                     break;
                 case "MoveGames":
                     MoveGames.Instance.Run();
+                    break;
+                case "CheckInstallers":
+                    CheckInstallers.Instance.Run();
                     break;
                 default:
                     Console.WriteLine("Build Assistant Error -> Invalid Arguement '" + args[0] + "'");

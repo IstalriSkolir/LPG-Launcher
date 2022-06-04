@@ -21,7 +21,7 @@ namespace LPG_Game_Configurator.Models
 
         public XMLIO()
         {
-            gameDataDir = Environment.CurrentDirectory + "\\GameData";
+            gameDataDir = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString()).ToString() + "\\GameData";
         }
 
         #endregion
@@ -34,7 +34,6 @@ namespace LPG_Game_Configurator.Models
             {
                 if (games.Count > 0)
                 {
-                    checkGameDataDirectoryExists();
                     string fileName = "//GameData-" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss").Replace("/", "").Replace(":", "").Replace(" ", "") + ".xml";
                     string path = gameDataDir + fileName;
                     XmlSerializer serializer = new XmlSerializer(games.GetType());
@@ -65,18 +64,6 @@ namespace LPG_Game_Configurator.Models
                 return null;
             }
             return games;
-        }
-
-        #endregion
-
-        #region Private Functions
-
-        private void checkGameDataDirectoryExists()
-        {
-            if (!Directory.Exists(gameDataDir))
-            {
-                Directory.CreateDirectory(gameDataDir);
-            }
         }
 
         #endregion
