@@ -32,7 +32,6 @@ namespace Build_Assistant.Singletons
         {
             try
             {
-                clearOldFiles();
                 List<Game> games = getGameData();
                 if (games != null && games.Count > 0)
                 {
@@ -52,37 +51,12 @@ namespace Build_Assistant.Singletons
             }
         }
 
-        private static void clearOldFiles()
-        {
-            try
-            {
-                Console.WriteLine("Build Assistant: Checking For Old Games...");
-                DirectoryInfo dirs = new DirectoryInfo(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games");
-                foreach (DirectoryInfo dir in dirs.GetDirectories())
-                {
-                    Console.WriteLine("Build Assistant: Deleting " + dir.Name + "...");
-                    Directory.Delete(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\Games\\" + dir.Name, true);
-                }
-                Console.WriteLine("Build Assistant: Checking For Old GameData Files...");
-                dirs = new DirectoryInfo(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\GameData");
-                foreach(FileInfo file in dirs.GetFiles())
-                {
-                    Console.WriteLine("Build Assistant: Deleting " + file.Name + "...");
-                    File.Delete(Directory.GetCurrentDirectory() + "\\bin\\Release\\net5.0-windows\\GameData\\" + file.Name);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Build Assistant Error -> Couldn't delete old games: " + e);
-            }
-        }
-
         private static List<Game> getGameData()
         {
             try
             {
                 Console.WriteLine("Build Assistant: Getting New GameData...");
-                DirectoryInfo gameDataDir = new DirectoryInfo(Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 12) + "LPG Game Configurator\\bin\\Debug\\net5.0-windows\\GameData");
+                DirectoryInfo gameDataDir = new DirectoryInfo(Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 12) + "LPG Game Configurator\\GameData");
                 var gameDatafile = (from file in gameDataDir.GetFiles() orderby file.CreationTime descending select file).First();
                 List<Game> games = new List<Game>();
                 XmlSerializer serializer = new XmlSerializer(games.GetType());
