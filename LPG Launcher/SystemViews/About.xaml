@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="LPG_Launcher.SystemViews.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LPG_Launcher.SystemViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="Bebas Neue Bold" Text="About" />
+        <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" Foreground="White" FontSize="16" FontFamily="Bebas Neue Bold" Margin="10, 10, 10, 0">
+            The LowPoly Games team started with John Wolfson, Will Dixon and Daniel Dennis for Global Game Jam 2017 at the university of Lincoln before Tim Weightman joined the team some time later. The team
+            have done every Global Game Jam since 2017 and most of the game jams at the University of Lincoln while John, Dan and Tim were students there. The games in this launcher are the result of 2000+
+            hours total put in by the team across all the jams they have completed as a team though some of the jams had only three team members and a few earlier jams also had Luke Garside join the team.
+        </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap" Foreground="White" FontSize="16" FontFamily="Bebas Neue Bold" Margin="10, 10, 10, 0">
+            Since all the team are now in full time work, the only jam we currently take part in as a team is Global Game Jam each year and we plan to keep doing Global Game Jam for the forseeable future.
+            Any games we complete from jams in the future will be added to this launcher as it is at the end of the jam. All the games are in the same state as they were by the end of the jam they were made
+            in bar Home Is Where The Mech Is and Time To Kill. Home Is Where The Mech is had a offline mode added after the jam to ensure everyone could try the game without streaming it and Time To Kill
+            had a couple of game breaking levels that were removed to make the game playable. The rest of the games are the same, bugs and all!
+        </TextBlock>
+
+    </Grid>
+</UserControl>

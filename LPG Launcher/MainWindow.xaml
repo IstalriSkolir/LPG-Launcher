@@ -8,6 +8,9 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Title="LowPoly Games Launcher" Height="800" Width="1200">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
@@ -36,11 +39,17 @@
                 </LinearGradientBrush.GradientStops>
             </LinearGradientBrush>
         </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <systemviews:TitleBar Grid.Row="0" />
-        <systemviews:GamesList Grid.Row="1" />
+        <systemviews:TitleBar Grid.Row="0" Grid.ColumnSpan="2" />
+        <systemviews:SidebarMenu Grid.Column="0" Grid.Row="1" />
+        <systemviews:GamesList Grid.Column="1" Grid.Row="1" Visibility="{Binding Path=ShowLibrary, Converter={StaticResource BoolToVis}}" />
+        <systemviews:About Grid.Column="1" Grid.Row="1" Visibility="{Binding Path=ShowAbout, Converter={StaticResource BoolToVis}}" />
     </Grid>
 </Window>
