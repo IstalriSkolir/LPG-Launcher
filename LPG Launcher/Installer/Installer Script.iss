@@ -36,14 +36,51 @@ Name: desktopicon; Description: "Create a Desktop Shortcut";
 
 [Run]
 Filename: "{app}\{#AppEXEName}"; Description: "{cm:LaunchProgram, {#StringChange(AppName, '&', '&&')}}"; Flags: nowait postinstall
-Filename: "{app}\windowsdesktop-runtime-5.0.17-win-x64.exe"; Parameters: "/q/passive"; Flags: waituntilterminated; Check: ShouldRun; StatusMsg: Microsoft .NET Framework 5.0 is being installed. Please wait...
+Filename: "{app}\windowsdesktop-runtime-5.0.17-win-x64.exe"; Parameters: "/q/passive"; Flags: waituntilterminated; Check: CheckIsDotNetDetected() ; StatusMsg: Microsoft .NET Framework 5.0 is being installed. Please wait...
 
 [Code]
-function ShouldRun: Boolean;
+function CheckIsDotNetDetected(): boolean;
 begin
-  if DirExists(ExpandConstant('C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.17')) then begin 
+  result := DotNetInstalled('Microsoft.NETCore.App 5.0.', 0);
+end;
+
+function DotNetInstalled(DotNetName: string): Boolean;
+var
+  Cmd, Args: string;
+  FileName: string;
+  Output: AnsiString;
+  Command: string;
+  ResultCode: Integer;
+begin
+  FileName := ExpandConstant('{tmp}\dotnet.txt');
+  Cmd := ExpandConstant('{cmd}');
+  Command := 'dotnet --list-runtimes';
+  Args := '/C ' + Command + ' > "' + FileName + '" 2>&1';
+  if Exec(Cmd, Args, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and
+     (ResultCode = 0) then
+  begin
+    if LoadStringFromFile(FileName, Output) then
+    begin
+      if Pos(DotNetName, Output) > 0 then
+      begin
+        Log('"' + DotNetName + '" found in output of "' + Command + '"');
+        Result := True;
+      end
+        else
+      begin
+        Log('"' + DotNetName + '" not found in output of "' + Command + '"');
+        Result := True;
+      end;
+    end
+      else
+    begin
+      Log('Failed to read output of "' + Command + '"');
+    end;
+  end
+    else
+  begin
+    Log('Failed to execute "' + Command + '"');
     Result := False;
-  end else begin
-    Result := True;
   end;
+  DeleteFile(FileName);
 end;
