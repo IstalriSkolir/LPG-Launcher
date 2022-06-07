@@ -6,13 +6,14 @@
              xmlns:local="clr-namespace:LPG_Launcher.SystemViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -28,6 +29,7 @@
             in bar Home Is Where The Mech Is and Time To Kill. Home Is Where The Mech is had a offline mode added after the jam to ensure everyone could try the game without streaming it and Time To Kill
             had a couple of game breaking levels that were removed to make the game playable. The rest of the games are the same, bugs and all!
         </TextBlock>
+        <Image Grid.Column="0" Grid.Row="3" Width="200" Height="200" Margin="10" Source="/Resources/ISPLogo.png" />
 
     </Grid>
 </UserControl>

@@ -76,6 +76,7 @@
     <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
     <None Remove="Resources\GameTemp.png" />
+    <None Remove="Resources\ISPLogo.png" />
     <None Remove="Resources\LogoTemp.png" />
   </ItemGroup>
 
@@ -107,6 +108,7 @@
     <Resource Include="Resources\GameTemp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\ISPLogo.png" />
     <Resource Include="Resources\LogoTemp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

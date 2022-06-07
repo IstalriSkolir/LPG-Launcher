@@ -29,7 +29,7 @@
                                 <TextBlock Text="{Binding Name}"/>
                             </Button.Content>
                             <Button.ToolTip>
-                                <ToolTip>
+                                <ToolTip Placement="Right" HorizontalOffset="10">
                                     <ToolTip.Background>
                                         <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
                                             <LinearGradientBrush.GradientStops>
