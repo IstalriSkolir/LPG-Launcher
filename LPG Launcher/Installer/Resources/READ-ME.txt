@@ -62,7 +62,7 @@ us.
 
 Please note that the launcher is still under development and while there are
 plans to integrate further features into the launcher, this is purely a for
-passion project and the development made cease at some time as a result.
+passion project and the development made cease at any time as a result.
 
 
 AUTHORS
@@ -104,12 +104,12 @@ Q: So all the games are the same as they were at the end of the jam they were
 A: Mostly, some like Home Is Where The Mech is had some slight work done after
    to ensure that anyone could play the game. Time To Kill is another we had to
    make some slight changes to for it to be fully playable. However, we haven't
-   made many changes to any of the games and most of them are untouched from
-   the end of the jam they were developed in.
+   made many changes to any of the other games and most of them are untouched
+   from the end of the jam they were developed in.
 
 
 Q: The GitHub repository for this is public, can I make contributions?
 
-A: Only the LowPoly Team can make code contributions to the project anyone can
-   report issues for us to work on. Please feel free to raise issues or add
-   suggestions to the launcher for us to consider working on.
+A: Only the LowPoly Team can make code contributions to the project, however,
+   anyone can report issues for us to work on. Please feel free to raise issues
+   or add suggestions to the launcher for us to consider working on.
