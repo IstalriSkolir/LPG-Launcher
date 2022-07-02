@@ -73,6 +73,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\BebasNeueBold.ttf" />
     <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
     <None Remove="Resources\Close.png" />
@@ -108,6 +109,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\BebasNeueBold.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Close.png" />
     <Resource Include="Resources\FG.png" />
     <Resource Include="Resources\GHGLogo.png" />

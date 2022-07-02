@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:LPG_Launcher"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="Bebas Neue Bold">pack://application:,,,/Fonts/#Bebas Neue Bold</FontFamily>
     </Application.Resources>
 </Application>
