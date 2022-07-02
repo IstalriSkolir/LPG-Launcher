@@ -75,7 +75,8 @@
   <ItemGroup>
     <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
-    <None Remove="Resources\GameTemp.png" />
+    <None Remove="Resources\FG.png" />
+    <None Remove="Resources\GHGLogo.png" />
     <None Remove="Resources\ISPLogo.png" />
     <None Remove="Resources\LogoTemp.png" />
   </ItemGroup>
@@ -105,9 +106,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\GameTemp.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Resources\FG.png" />
+    <Resource Include="Resources\GHGLogo.png" />
     <Resource Include="Resources\ISPLogo.png" />
     <Resource Include="Resources\LogoTemp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
