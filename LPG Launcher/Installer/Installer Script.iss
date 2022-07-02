@@ -39,11 +39,6 @@ Filename: "{app}\{#AppEXEName}"; Description: "{cm:LaunchProgram, {#StringChange
 Filename: "{app}\windowsdesktop-runtime-5.0.17-win-x64.exe"; Parameters: "/q/passive"; Flags: waituntilterminated; Check: CheckIsDotNetDetected() ; StatusMsg: Microsoft .NET Framework 5.0 is being installed. Please wait...
 
 [Code]
-function CheckIsDotNetDetected(): boolean;
-begin
-  result := DotNetInstalled('Microsoft.NETCore.App 5.0.', 0);
-end;
-
 function DotNetInstalled(DotNetName: string): Boolean;
 var
   Cmd, Args: string;
@@ -83,4 +78,9 @@ begin
     Result := False;
   end;
   DeleteFile(FileName);
+end;
+
+function CheckIsDotNetDetected(): boolean;
+begin
+  result := DotNetInstalled('Microsoft.NETCore.App 5.0.');
 end;
