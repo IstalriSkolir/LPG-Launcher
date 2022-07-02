@@ -11,7 +11,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="Bebas Neue Bold" Text="Library" />
+        <TextBlock Grid.Row="0" Margin="50 25 25 0" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="{StaticResource Bebas Neue Bold}" Text="Library" />
         <ListBox Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" BorderThickness="0" ItemsSource="{Binding GameData.Games}" Margin="10, 10, 10, 10">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
