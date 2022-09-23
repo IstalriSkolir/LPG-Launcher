@@ -79,7 +79,7 @@
             </TextBlock.RenderTransform>
             Email: WillGDixon@Gmail.com
         </TextBlock>
-        <Image Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Width="150" Height="150" Margin="10" Source="/Resources/FG.png">
+        <Image Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Width="150" Height="150" Margin="10" Source="/Resources/HCPlus.png">
             <Image.RenderTransform>
                 <TranslateTransform X="-50" Y="50" />
             </Image.RenderTransform>

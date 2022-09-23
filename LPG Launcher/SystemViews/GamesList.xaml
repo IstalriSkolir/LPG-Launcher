@@ -21,13 +21,45 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Button Command="{Binding RunGameCommand}" IsEnabled="{Binding ButtonEnabled}" Width="200" Height="200">
+                        <Button x:Name="button" Command="{Binding RunGameCommand}" IsEnabled="{Binding ButtonEnabled}" Width="200" Height="200">
+                            <!--
                             <Button.Background>
                                 <ImageBrush ImageSource="{Binding Path=ImageData}" Stretch="UniformToFill" />
                             </Button.Background>
                             <Button.Content>
                                 <TextBlock Text="{Binding Name}"/>
                             </Button.Content>
+                            -->
+
+
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid>
+                                                    <Image x:Name="buttonImage" Source="{Binding Path=ImageData}" Stretch="UniformToFill" Visibility="Visible"/>
+                                                    <Image x:Name="buttonImageBlurred" Source="{Binding Path=ImageData}" Stretch="UniformToFill" Visibility="Hidden">
+                                                        <Image.Effect>
+                                                            <BlurEffect Radius="20"/>
+                                                        </Image.Effect>
+                                                    </Image>
+                                                    <Label x:Name="buttonLabel" Content="{Binding Name}"  FontFamily="{StaticResource Bebas Neue Bold}" FontSize="20" Foreground="White" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="buttonImage" Property="Visibility" Value="Hidden"/>
+                                                        <Setter TargetName="buttonImageBlurred" Property="Visibility" Value="Visible"/>
+                                                        <Setter TargetName="buttonLabel" Property="Visibility" Value="Visible"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                            
+                            
                             <Button.ToolTip>
                                 <ToolTip Placement="Right" HorizontalOffset="10">
                                     <ToolTip.Background>
@@ -41,7 +73,7 @@
                                             </LinearGradientBrush.GradientStops>
                                         </LinearGradientBrush>
                                     </ToolTip.Background>
-                                    <DockPanel> <!--Width="150" Height="100">-->
+                                    <DockPanel>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="200" />
