@@ -22,16 +22,6 @@
                 <DataTemplate>
                     <Grid>
                         <Button x:Name="button" Command="{Binding RunGameCommand}" IsEnabled="{Binding ButtonEnabled}" Width="200" Height="200">
-                            <!--
-                            <Button.Background>
-                                <ImageBrush ImageSource="{Binding Path=ImageData}" Stretch="UniformToFill" />
-                            </Button.Background>
-                            <Button.Content>
-                                <TextBlock Text="{Binding Name}"/>
-                            </Button.Content>
-                            -->
-
-
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
                                     <Setter Property="Template">
@@ -58,8 +48,6 @@
                                     </Setter>
                                 </Style>
                             </Button.Style>
-                            
-                            
                             <Button.ToolTip>
                                 <ToolTip Placement="Right" HorizontalOffset="10">
                                     <ToolTip.Background>

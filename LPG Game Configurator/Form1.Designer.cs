@@ -278,9 +278,9 @@ namespace LPG_Game_Configurator
             // GameDescTextBox
             // 
             this.GameDescTextBox.Enabled = false;
-            this.GameDescTextBox.Location = new System.Drawing.Point(525, 125);
+            this.GameDescTextBox.Location = new System.Drawing.Point(525, 100);
             this.GameDescTextBox.Name = "GameDescTextBox";
-            this.GameDescTextBox.Size = new System.Drawing.Size(300, 175);
+            this.GameDescTextBox.Size = new System.Drawing.Size(300, 303);
             this.GameDescTextBox.TabIndex = 22;
             this.GameDescTextBox.Text = "";
             this.GameDescTextBox.TextChanged += new System.EventHandler(this.GameDescTextBox_TextChanged);

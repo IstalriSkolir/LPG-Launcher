@@ -27,6 +27,7 @@ Source: "..\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversio
 Source: "Resources\windowsdesktop-runtime-5.0.17-win-x64.exe"; DestDir: "{app}"; Flags: ignoreversion deleteafterinstall
 Source: "Resources\READ-ME.txt"; DestDir: "{app}"; Flags: isreadme;
 Source: "Resources\LogoTemp.ico"; DestDir: "{app}\Resources";
+;Source: "Resources\Uninstaller.bat"; DestDir: "{app}";
 
 [Icons]
 Name: "{commondesktop}\LPG Launcher"; Filename: "{app}\LPG Launcher.exe"; IconFilename: "{app}\Resources\LogoTemp.ico"; Tasks: desktopicon;
