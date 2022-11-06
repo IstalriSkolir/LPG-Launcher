@@ -7,17 +7,17 @@
 
 using System.Reflection;
 
-[assembly: AssemblyVersion("<#= this.Release #>.<#= this.MonthsSinceProjectStarted #>.<#= this.DaysSinceMonthStarted #>.<#= this.MinutesSinceMidnight  #>")]
-[assembly: AssemblyFileVersion("<#= this.Release #>.<#= this.MonthsSinceProjectStarted #>.<#= this.DaysSinceMonthStarted #>.<#= this.MinutesSinceMidnight  #>")]
+[assembly: AssemblyVersion("<#= this.Release #>.<#= this.MajorUpdate #>.<#= this.MonthsSinceLastMajorUpdate #>.<#= this.MinutesSinceMidnight  #>")]
+[assembly: AssemblyFileVersion("<#= this.Release #>.<#= this.MajorUpdate #>.<#= this.MonthsSinceLastMajorUpdate #>.<#= this.MinutesSinceMidnight  #>")]
 
 <#+
 
- int Release = 0;
+ int Release = 1;
+ int MajorUpdate = 0;
  
- static DateTime ProjectStartedDate = new DateTime(year: 2022, month: 5, day: 20);
+ static DateTime LastMajorUpdate = new DateTime(year: 2022, month: 11, day: 06);
  
- int MonthsSinceProjectStarted = (int)((Int32.Parse(DateTime.Now.ToString("yyyy")) * 12) + Int32.Parse(DateTime.Now.ToString("MM"))) - ((ProjectStartedDate.Year * 12) + ProjectStartedDate.Month);
- int DaysSinceMonthStarted = (int)Int32.Parse(DateTime.Now.ToString("dd"));
+ int MonthsSinceLastMajorUpdate = (int)((Int32.Parse(DateTime.Now.ToString("yyyy")) * 12) + Int32.Parse(DateTime.Now.ToString("MM"))) - ((LastMajorUpdate.Year * 12) + LastMajorUpdate.Month);
  int MinutesSinceMidnight = (int)DateTime.UtcNow.TimeOfDay.TotalMinutes;
 
 #>
