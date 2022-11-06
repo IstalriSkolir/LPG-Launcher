@@ -53,7 +53,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="&quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MakeDir$(ConfigurationName)&quot;&#xD;&#xA;if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MoveGames&quot;&#xD;&#xA;   &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CheckInstallers&quot;&#xD;&#xA;)" />
+    <Exec Command="&quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MakeDir$(ConfigurationName)&quot;&#xD;&#xA;if $(ConfigurationName) == Release (&#xD;&#xA;   del /S *.pdb&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;MoveGames&quot;&#xD;&#xA;  &quot;C:\Program Files (x86)\Inno Setup 6\ISCC.exe&quot; &quot;$(ProjectDir)Installer\Installer Script.iss&quot;&#xD;&#xA;   &quot;$(ProjectDir)..\Build Assistant\bin\Release\Build Assistant.exe&quot; &quot;CheckInstallers&quot;&#xD;&#xA;)" />
   </Target>
 
   <PropertyGroup>
@@ -63,7 +63,7 @@
     <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
     <PackageIcon></PackageIcon>
     <PackageIconUrl />
-    <ApplicationIcon>LogoTemp.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
     <StartupObject />
   </PropertyGroup>
 
@@ -76,13 +76,14 @@
     <None Remove="Fonts\BebasNeueBold.ttf" />
     <None Remove="Installer\BuildAssistant.exe" />
     <None Remove="Installer\InstallerVersionControl.exe" />
+    <None Remove="Logo.ico" />
     <None Remove="Resources\Close.png" />
     <None Remove="Resources\FG.png" />
     <None Remove="Resources\GHGLogo.png" />
-    <None Remove="Resources\HCPlus" />
     <None Remove="Resources\HCPlus.png" />
     <None Remove="Resources\ISPLogo.png" />
-    <None Remove="Resources\LogoTemp.png" />
+    <None Remove="Resources\Logo.ico" />
+    <None Remove="Resources\Logo.png" />
     <None Remove="Resources\Minimise.png" />
   </ItemGroup>
 
@@ -114,14 +115,14 @@
     <Resource Include="Fonts\BebasNeueBold.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Logo.ico" />
+    <Resource Include="Resources\Logo.ico" />
     <Resource Include="Resources\Close.png" />
     <Resource Include="Resources\FG.png" />
     <Resource Include="Resources\GHGLogo.png" />
     <Resource Include="Resources\HCPlus.png" />
     <Resource Include="Resources\ISPLogo.png" />
-    <Resource Include="Resources\LogoTemp.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Resources\Logo.png" />
     <Resource Include="Resources\Minimise.png" />
   </ItemGroup>
 
