@@ -22,7 +22,45 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Button Width="200" Height="50" Grid.Row="0" Background="Transparent" BorderThickness="0" Content="Library" FontFamily="{StaticResource Bebas Neue Bold}" FontSize="44" Foreground="White" Margin="0, 25, 0, 0" Command="{Binding ShowLibraryCommand}" />
-        <Button Width="200" Height="50" Grid.Row="1" Background="Transparent" BorderThickness="0" Content="About" FontFamily="{StaticResource Bebas Neue Bold}" FontSize="44" Foreground="White" Margin="0, 25, 0, 0" Command="{Binding ShowAboutCommand}" />
+        <Button Width="200" Height="50" Grid.Row="0" Background="Transparent" BorderThickness="0" Content="Library" FontFamily="{StaticResource Bebas Neue Bold}" FontSize="44" Foreground="White" Margin="0, 25, 0, 0" Command="{Binding ShowLibraryCommand}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#161634" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Width="200" Height="50" Grid.Row="1" Background="Transparent" BorderThickness="0" Content="About" FontFamily="{StaticResource Bebas Neue Bold}" FontSize="44" Foreground="White" Margin="0, 25, 0, 0" Command="{Binding ShowAboutCommand}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#161634" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </UserControl>
