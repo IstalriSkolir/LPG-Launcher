@@ -3,6 +3,7 @@
 #define AppVersion GetFileVersion("..\bin\Release\net5.0-windows\LPG Launcher.exe")
 #define AppEXEName "LPG Launcher.exe"
 #define AppURL "https://lowpolygames.itch.io/"
+#define AppIcon "Resources\Logo.ico"
 #define AppSetupIcon "Resources\LogoSetup.ico"
 #define AppUninstallIcon "Resources\LogoUninstall.ico"
 
@@ -21,7 +22,7 @@ Compression=lzma2
 SolidCompression=yes
 OutputBaseFilename=LPG Launcher Installer {#AppVersion}
 SetupIconFile={#AppSetupIcon}
-UninstallDisplayIcon={#AppUninstallIcon}
+UninstallDisplayIcon={app}\{#AppIcon}
 OutputDir=..\Output
 
 [Files]
