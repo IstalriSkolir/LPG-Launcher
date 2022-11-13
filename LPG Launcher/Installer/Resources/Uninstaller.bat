@@ -1,1 +1,1 @@
-start "" Uninstall\unins000.exe
+start "" Uninstallers\unins000.exe

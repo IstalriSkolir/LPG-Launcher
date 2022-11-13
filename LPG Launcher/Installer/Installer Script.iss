@@ -23,6 +23,7 @@ SolidCompression=yes
 OutputBaseFilename=LPG Launcher Installer {#AppVersion}
 SetupIconFile={#AppSetupIcon}
 UninstallDisplayIcon={app}\{#AppIcon}
+UninstallFilesDir={app}\Uninstallers
 OutputDir=..\Output
 
 [Files]
@@ -30,9 +31,14 @@ Source: "..\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversio
 Source: "Resources\windowsdesktop-runtime-5.0.17-win-x64.exe"; DestDir: "{app}"; Flags: ignoreversion deleteafterinstall
 Source: "Resources\READ-ME.txt"; DestDir: "{app}"; Flags: isreadme;
 Source: "Resources\Logo.ico"; DestDir: "{app}\Resources";
+Source: "Resources\LogoUninstall.ico"; DestDir: "{app}\Resources";
+
+[Dirs]
+Name: "{app}\Uninstallers"; Attribs: hidden;
 
 [Icons]
 Name: "{commondesktop}\LPG Launcher"; Filename: "{app}\LPG Launcher.exe"; IconFilename: "{app}\Resources\Logo.ico"; Tasks: desktopicon;
+Name: "{app}\Uninstaller"; Filename: "{app}\Uninstallers\unins000.exe"; IconFilename: "{app}\Resources\LogoUninstall.ico";
 
 [Tasks]
 Name: desktopicon; Description: "Create a Desktop Shortcut";
