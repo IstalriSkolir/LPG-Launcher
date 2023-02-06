@@ -13,9 +13,9 @@ using System.Reflection;
 <#+
 
  int Release = 1;
- int MajorUpdate = 0;
+ int MajorUpdate = 1;
  
- static DateTime LastMajorUpdate = new DateTime(year: 2022, month: 11, day: 06);
+ static DateTime LastMajorUpdate = new DateTime(year: 2023, month: 02, day: 06);
  
  int MonthsSinceLastMajorUpdate = (int)((Int32.Parse(DateTime.Now.ToString("yyyy")) * 12) + Int32.Parse(DateTime.Now.ToString("MM"))) - ((LastMajorUpdate.Year * 12) + LastMajorUpdate.Month);
  int DaysSinceLastMajorUpdate = (int)(DateTime.Now - LastMajorUpdate).TotalDays;
